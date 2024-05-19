@@ -11,3 +11,16 @@ Issues are always labeled in two categories:
 - `type : [bug, doc, enhancement]`: nature of the problem and changes.
 - `state : [pending, discarded, duplicate, accepted]`: state of the issue.
 
+## Pull Requests
+Pull requests must always have `develop` as the target.
+
+The information on them should be minimal. Always start with a referal to the issue they are solving.
+To do so, start your PRs in this way.
+
+```markdown
+Resolves #issueNumber.
+```
+
+If some additional clarification needs to be added that is not addressed in the corresponding issue,
+feel free to do so.
+
