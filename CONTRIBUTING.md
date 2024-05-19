@@ -23,4 +23,3 @@ Resolves #issueNumber.
 
 If some additional clarification needs to be added that is not addressed in the corresponding issue,
 feel free to do so.
-
