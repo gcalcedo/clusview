@@ -23,3 +23,5 @@ Resolves #issueNumber.
 
 If some additional clarification needs to be added that is not addressed in the corresponding issue,
 feel free to do so.
+
+Creating a PR directly without referring to an issue is possible if the change is trivial, like a typo.
