@@ -8,8 +8,18 @@ Explain the problem in detail and the proposed solution. No need to be explicit 
 outlining the high-level view of the changes is sufficient.
 
 Issues are always labeled into two categories:
-- `type : [bug, doc, enhancement]`: nature of the problem and changes.
+- `type`: nature of the problem and changes:
+
+  https://github.com/gcalcedo/clusview/labels/state%20%3A%20pending
+  https://github.com/gcalcedo/clusview/labels/state%20%3A%20discarded
+  https://github.com/gcalcedo/clusview/labels/state%20%3A%20duplicate
+  https://github.com/gcalcedo/clusview/labels/state%20%3A%20accepted
+
 - `state : [pending, discarded, duplicate, accepted]`: state of the issue.
+
+  https://github.com/gcalcedo/clusview/labels/type%20%3A%20enhancement
+  https://github.com/gcalcedo/clusview/labels/type%20%3A%20doc
+  https://github.com/gcalcedo/clusview/labels/type%20%3A%20bug
 
 ## Pull Requests
 Pull requests must always have `develop` as the target.
