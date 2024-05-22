@@ -1,5 +1,5 @@
 # Contributing
-ClusView follows the following guidelines regarding issues, PRs and commit history.
+*ClusView* follows the following guidelines regarding issues, PRs and commit history.
 
 ## Issues
 Issues are the main point of information about proposals, bugs, and any other type of discussion.
@@ -14,7 +14,7 @@ Issues are always labeled into two categories:
   https://github.com/gcalcedo/clusview/labels/state%20%3A%20discarded
   https://github.com/gcalcedo/clusview/labels/state%20%3A%20accepted
 
-- `state : [pending, discarded, duplicate, accepted]`: state of the issue.
+- `state`: progress on the issue.
 
   https://github.com/gcalcedo/clusview/labels/type%20%3A%20enhancement
   https://github.com/gcalcedo/clusview/labels/type%20%3A%20docs
