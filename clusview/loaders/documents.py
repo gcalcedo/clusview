@@ -1,10 +1,24 @@
+from abc import ABC, abstractmethod
 from typing import List
 import pandas as pd
 
 
-def load_docs_from_csv(path_to_csv: str, column_names: List[str] = []) -> List[str]:
+class BaseDocumentLoader(ABC):
     """
-    Creates a series of documents by concatenating the values of CSV columns.
+    Base class for document loaders.
+    """
+
+    @abstractmethod
+    def load_documents(self) -> List[str]:
+        """
+        Loads the documents with this component's specific implementation.
+        """
+        pass
+
+
+class CSVConcatenator(BaseDocumentLoader):
+    """
+    Creates a list of documents by concatenating the values of CSV columns.
 
     ### Args:
         - `path_to_csv : str`: Filesystem path to the CSV file.
@@ -15,10 +29,16 @@ def load_docs_from_csv(path_to_csv: str, column_names: List[str] = []) -> List[s
     ### Returns:
         - `List[str]`: List of documents.
     """
-    df: pd.DataFrame = pd.read_csv(path_to_csv).astype(str)
 
-    if column_names:
-        column_names = [col for col in column_names if col in df.columns]
-        df = df[column_names]
+    def __init__(self, path_to_csv: str, column_names: List[str] = []) -> None:
+        self.path_to_csv = path_to_csv
+        self.column_names = column_names
 
-    return df.apply(lambda row: " ".join(row.astype(str)), axis=1).tolist()
+    def load_documents(self) -> List[str]:
+        df: pd.DataFrame = pd.read_csv(self.path_to_csv).astype(str)
+
+        if self.column_names:
+            self.column_names = [col for col in self.column_names if col in df.columns]
+            df = df[self.column_names]
+
+        return df.apply(lambda row: " ".join(row.astype(str)), axis=1).tolist()
