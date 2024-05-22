@@ -14,7 +14,7 @@ Issues are always labeled into two categories:
   https://github.com/gcalcedo/clusview/labels/state%20%3A%20discarded
   https://github.com/gcalcedo/clusview/labels/state%20%3A%20accepted
 
-- `state : [pending, discarded, duplicate, accepted]`: state of the issue.
+- `state`: progress on the issue.
 
   https://github.com/gcalcedo/clusview/labels/type%20%3A%20enhancement
   https://github.com/gcalcedo/clusview/labels/type%20%3A%20docs
