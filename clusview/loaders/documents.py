@@ -2,7 +2,7 @@ from typing import List
 import pandas as pd
 
 
-def docs_from_csv(path_to_csv: str, column_names: List[str] = []) -> List[str]:
+def load_docs_from_csv(path_to_csv: str, column_names: List[str] = []) -> List[str]:
     """
     Creates a series of documents by concatenating the values of CSV columns.
 
