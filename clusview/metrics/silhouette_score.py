@@ -1,6 +1,6 @@
 from bertopic import BERTopic
 import numpy as np
-from .metric_combinator import BaseMetric
+from .metric_combinators import BaseMetric
 from sklearn.metrics import silhouette_score
 
 
@@ -20,5 +20,5 @@ class SilhouetteScore(BaseMetric):
 
         X = reduced_embeddings[np.array(indices)]
         labels = [topic for index, topic in enumerate(topics) if topic != -1]
-        
+
         return silhouette_score(X, labels)
