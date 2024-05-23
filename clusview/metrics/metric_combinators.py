@@ -40,6 +40,7 @@ class LinearCombinator(BaseCombinator):
     ### Returns
     - `float`: linear combination of the `weighted_metrics`.
     """
+
     def __init__(self, weighted_metrics: List[Tuple[BaseMetric, float]]) -> None:
         self.weighted_metrics = weighted_metrics
         self.normalize()
