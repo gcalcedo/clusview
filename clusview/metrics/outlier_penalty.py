@@ -3,9 +3,9 @@ from numpy import ndarray
 from clusview.metrics.metric_combinators import BaseMetric
 
 
-class OutlierPenalty(BaseMetric):
+class OutlierRatio(BaseMetric):
     """
-    Outlier Penalty is the ratio between outliers and total documents multiplied by -1.
+    Outlier Ratio is the ratio between outliers and total documents multiplied.
     """
 
     def perform_metric(self, topic_model: BERTopic, embeddings: ndarray) -> float:
