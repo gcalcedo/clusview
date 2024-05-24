@@ -9,7 +9,12 @@ class OutlierPenalty(BaseMetric):
     """
 
     def perform_metric(self, topic_model: BERTopic, embeddings: ndarray) -> float:
-        outlier_count = topic_model.get_topic_info().loc[0, "Count"]
-        total_count = topic_model.get_topic_info()["Count"].sum()
+        topic_info = topic_model.get_topic_info()
+        outlier_info = topic_info.loc[0]
+        
+        outlier_count = outlier_info["Count"] if outlier_info["Topic"] == -1 else 0
+        total_count = topic_info["Count"].sum()
+        
         outlier_ratio = outlier_count / total_count
-        return outlier_ratio * -1
+        
+        return outlier_ratio
