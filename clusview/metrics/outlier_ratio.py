@@ -5,7 +5,7 @@ from clusview.metrics.metric_combinators import BaseMetric
 
 class OutlierRatio(BaseMetric):
     """
-    Outlier Ratio is the ratio between outliers and total documents multiplied.
+    Outlier Ratio is the ratio between outliers and total documents.
     """
 
     def perform_metric(self, topic_model: BERTopic, embeddings: ndarray) -> float:
