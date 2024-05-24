@@ -17,4 +17,4 @@ class OutlierPenalty(BaseMetric):
         
         outlier_ratio = outlier_count / total_count
         
-        return outlier_ratio * -1
+        return outlier_ratio
