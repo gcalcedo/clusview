@@ -18,6 +18,9 @@ class SilhouetteScore(BaseMetric):
         topics = topic_model.topics_
         indices = [index for index, topic in enumerate(topics) if topic != -1]
 
+        if not indices:
+            return 0
+
         X = reduced_embeddings[np.array(indices)]
         labels = [topic for index, topic in enumerate(topics) if topic != -1]
 
