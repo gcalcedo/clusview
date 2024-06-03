@@ -1,5 +1,6 @@
 from bertopic import BERTopic
 from numpy import ndarray
+
 from clusview.metrics.metric_combinators import BaseMetric
 
 

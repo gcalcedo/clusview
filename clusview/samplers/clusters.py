@@ -1,5 +1,6 @@
 from itertools import product
 from typing import List
+
 from hdbscan import HDBSCAN
 
 from clusview.samplers.parameter_samplers import BaseSampler

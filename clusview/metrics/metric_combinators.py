@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Tuple
+
 from bertopic import BERTopic
 from numpy import ndarray
 
