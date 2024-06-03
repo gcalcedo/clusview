@@ -1,7 +1,8 @@
-from bertopic import BERTopic
 import numpy as np
-from .metric_combinators import BaseMetric
+from bertopic import BERTopic
 from sklearn.metrics import silhouette_score
+
+from .metric_combinators import BaseMetric
 
 
 class SilhouetteScore(BaseMetric):

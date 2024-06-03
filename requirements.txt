@@ -1,1 +1,4 @@
 bertopic
+matplotlib
+black
+isort
