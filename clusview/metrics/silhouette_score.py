@@ -2,7 +2,7 @@ import numpy as np
 from bertopic import BERTopic
 from sklearn.metrics import silhouette_score
 
-from .metric_combinators import BaseMetric
+from clusview.metrics.base_metric import BaseMetric
 
 
 class SilhouetteScore(BaseMetric):

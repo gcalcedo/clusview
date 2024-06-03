@@ -1,7 +1,7 @@
 from bertopic import BERTopic
 from numpy import ndarray
 
-from clusview.metrics.metric_combinators import BaseMetric
+from clusview.metrics.base_metric import BaseMetric
 
 
 class OutlierRatio(BaseMetric):
