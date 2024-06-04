@@ -3,7 +3,7 @@ from typing import List
 
 from hdbscan import HDBSCAN
 
-from clusview.samplers.parameter_samplers import BaseSampler
+from clusview.samplers.parameters.base_parameter_sampler import BaseSampler
 
 
 class HDBSCANSampler:
@@ -12,7 +12,7 @@ class HDBSCANSampler:
     for a given list of parameter samplers.
 
     ### Args
-    - `parameter_samplers : List[ParameterRange]`: list of parameter ranges.
+    - `parameter_samplers : List[BaseSampler]`: list of parameter samplers.
     """
 
     def __init__(self, parameter_samplers: List[BaseSampler]) -> None:
