@@ -27,13 +27,13 @@ class CVMetricWriter:
         self,
         document_loader: BaseDocumentLoader,
         transformer: SentenceTransformer,
-        hdbscan_iterator: HDBSCANSampler,
+        hdbscan_sampler: HDBSCANSampler,
         metrics: Dict[str, BaseMetric],
     ) -> None:
         self.document_loader = document_loader
         self.transformer = transformer
         self.metrics = metrics
-        self.hdbscan_iterator = hdbscan_iterator
+        self.hdbscan_iterator = hdbscan_sampler
 
     def fit_bert(self, hdbscan, documents, embeddings, i, j):
         topic_model = BERTopic(hdbscan_model=hdbscan)
