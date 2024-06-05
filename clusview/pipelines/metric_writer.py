@@ -41,7 +41,7 @@ class CVMetricWriter:
 
         return topic_model, embeddings, i, j
 
-    def fit_clusters(self):
+    def run(self):
         documents = self.document_loader.load_documents()
 
         embeddings = self.transformer.encode(
