@@ -15,3 +15,6 @@ class BaseSampler(ABC):
     @abstractmethod
     def sample_range(self) -> Iterable:
         pass
+
+    def get_sampling_count(self) -> int:
+        return len(self.sample_range())
