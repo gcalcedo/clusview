@@ -1,4 +1,5 @@
 bertopic
 matplotlib
+tqdm
 black
 isort
