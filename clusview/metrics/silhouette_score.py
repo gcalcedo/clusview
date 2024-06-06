@@ -1,5 +1,7 @@
+from typing import Any
+
 import numpy as np
-from bertopic import BERTopic
+from numpy import ndarray
 from sklearn.metrics import silhouette_score
 
 from clusview.metrics.base_metric import BaseMetric
@@ -14,15 +16,16 @@ class SilhouetteScore(BaseMetric):
     - B: The mean distance between a sample and all other points in the next nearest cluster.
     """
 
-    def perform_metric(self, topic_model: BERTopic, embeddings: np.ndarray) -> float:
-        reduced_embeddings = topic_model.umap_model.transform(embeddings)
-        topics = topic_model.topics_
-        indices = [index for index, topic in enumerate(topics) if topic != -1]
+    def perform_metric(self, **kwargs: Any) -> float:
+        clusters: ndarray = kwargs["clusters"]
+        embeddings: ndarray = kwargs["embeddings"]
 
-        if not indices:
+        indices = np.where(clusters != -1)[0]
+
+        if len(indices) == 0:
             return 0
 
-        X = reduced_embeddings[np.array(indices)]
-        labels = [topic for index, topic in enumerate(topics) if topic != -1]
+        X = embeddings[indices]
+        labels = clusters[indices]
 
         return silhouette_score(X, labels)
