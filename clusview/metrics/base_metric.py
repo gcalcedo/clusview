@@ -1,7 +1,5 @@
 from abc import ABC, abstractmethod
-
-from bertopic import BERTopic
-from numpy import ndarray
+from typing import Any
 
 
 class BaseMetric(ABC):
@@ -10,7 +8,7 @@ class BaseMetric(ABC):
     """
 
     @abstractmethod
-    def perform_metric(self, topic_model: BERTopic, embeddings: ndarray) -> float:
+    def perform_metric(self, **kwargs: Any) -> float:
         """
         Performs the specification of this metric.
         """
