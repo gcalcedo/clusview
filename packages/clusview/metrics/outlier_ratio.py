@@ -1,13 +1,24 @@
 from typing import Any
 
-from numpy import ndarray
-
 from metrics.base_metric import BaseMetric
+from numpy import ndarray
 
 
 class OutlierRatio(BaseMetric):
     """
-    Outlier Ratio is the ratio between outliers and total documents.
+    Calculates the outlier ratio of a clustering result.
+
+    Args:
+        clusters (ndarray): An array representing the clustering result, where -1 indicates outliers.
+
+    Returns:
+        float: The outlier ratio, defined as the ratio of outliers to the total number of data points.
+
+    Examples:
+        >>> clusters = np.array([0, 1, 0, -1, 1, 0, -1, -1])
+        >>> metric = OutlierRatio()
+        >>> metric.perform_metric(clusters=clusters)
+        0.375
     """
 
     def perform_metric(self, **kwargs: Any) -> float:
