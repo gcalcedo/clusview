@@ -2,17 +2,29 @@ from itertools import product
 from typing import List
 
 from hdbscan import HDBSCAN
-
 from samplers.parameters.base_parameter_sampler import BaseSampler
 
 
 class HDBSCANSampler:
     """
-    Iterates over HDSBCAN configurations based on a complete set of combinations
-    for a given list of parameter samplers.
+    A class that generates configurations for HDBSCAN clustering algorithm by sampling parameters.
 
-    ### Args
-    - `parameter_samplers : List[BaseSampler]`: list of parameter samplers.
+    Args:
+        parameter_samplers (List[BaseSampler]): A list of parameter samplers used to sample the parameters for HDBSCAN.
+
+    Returns:
+        None
+
+    Examples:
+        >>> sampler1 = LinearSampler(...)
+        >>> sampler2 = PolynomialSampler(...)
+        >>> sampler3 = LinearSampler(...)
+
+        >>> sampler = HDBSCANSampler([sampler1, sampler2, sampler3])
+
+        >>> for configuration in sampler.iterate_configurations():
+        ...     # Perform operations with the generated configuration
+        ...     ...
     """
 
     def __init__(self, parameter_samplers: List[BaseSampler]) -> None:

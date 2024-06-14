@@ -1,14 +1,29 @@
 from typing import Any
 
 import numpy as np
-from numpy import ndarray
-
 from metrics.base_metric import BaseMetric
+from numpy import ndarray
 
 
 class AverageClusterSize(BaseMetric):
     """
-    Average size of clusters.
+    Calculates the average size of clusters.
+
+    This metric calculates the average size of clusters by counting the number of elements in each cluster and
+    taking the mean of those counts.
+
+    Args:
+        clusters (ndarray): An array containing the cluster assignments for each element.
+
+    Returns:
+        float: The average size of clusters.
+
+    Examples:
+        >>> clusters = np.array([0, 0, 1, 1, 1, 2, 2, 2, 2])
+        >>> metric = AverageClusterSize()
+        >>> result = metric.perform_metric(clusters=clusters)
+        >>> print(result)
+        3.0
     """
 
     def perform_metric(self, **kwargs: Any) -> float:

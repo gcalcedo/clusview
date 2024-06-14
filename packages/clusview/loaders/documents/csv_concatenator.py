@@ -1,29 +1,31 @@
 from typing import List
 
 import pandas as pd
-
 from loaders.documents.base_document_loader import BaseDocumentLoader
 
 
 class CSVConcatenator(BaseDocumentLoader):
-    """
-    Creates a list of documents by concatenating the values of CSV columns.
-
-    ### Args:
-        - `path_to_csv : str`: Filesystem path to the CSV file.
-        - `column_names : List[str]`: List of column names to create the documents from.
-        By default, or if left empty, it will use all of the columns of the CSV.
-        If a column name does not exist in the CSV, it is ignored.
-
-    ### Returns:
-        - `List[str]`: List of documents.
-    """
+    """A class for loading and concatenating documents from a CSV file."""
 
     def __init__(self, path_to_csv: str, column_names: List[str] = []) -> None:
+        """
+        Initialize the CSVConcatenator.
+
+        Args:
+            path_to_csv (str): The path to the CSV file.
+            column_names (List[str], optional): A list of column names to include in the concatenation.
+                Defaults to an empty list, which includes all columns.
+        """
         self.path_to_csv = path_to_csv
         self.column_names = column_names
 
     def load_documents(self) -> List[str]:
+        """
+        Load and concatenate the documents from the CSV file.
+
+        Returns:
+            List[str]: A list of concatenated documents.
+        """
         df: pd.DataFrame = pd.read_csv(self.path_to_csv).astype(str)
 
         if self.column_names:
