@@ -7,7 +7,13 @@ Issues are the main point of information about proposals, bugs, and any other ty
 Explain the problem in detail and the proposed solution. No need to be explicit about code,
 outlining the high-level view of the changes is sufficient.
 
-Issues are always labeled into two categories:
+Issues are always labeled into three categories:
+- `module`: package that the issue addresses:
+
+  https://github.com/gcalcedo/clusview/labels/module%20%3A%20repo
+  https://github.com/gcalcedo/clusview/labels/module%20%3A%20core
+  https://github.com/gcalcedo/clusview/labels/module%20%3A%20ui
+
 - `type`: nature of the problem and changes:
 
   https://github.com/gcalcedo/clusview/labels/state%20%3A%20pending
@@ -23,7 +29,7 @@ Issues are always labeled into two categories:
 ## Pull Requests
 Pull requests must always have `develop` as the target.
 
-The information on them should be minimal. Always start with a reference to the issue they are solving.
+The information on their description should be minimal, most of it should be contained in the corresponding issue. Always start with a reference to the issue they are solving.
 To do so, start your PRs in this way.
 
 ```markdown
