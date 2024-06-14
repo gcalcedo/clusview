@@ -14,13 +14,13 @@ Issues are always labeled into three categories:
   https://github.com/gcalcedo/clusview/labels/module%20%3A%20core
   https://github.com/gcalcedo/clusview/labels/module%20%3A%20ui
 
-- `type`: nature of the problem and changes:
+- `state`: progress on the issue.
 
   https://github.com/gcalcedo/clusview/labels/state%20%3A%20pending
   https://github.com/gcalcedo/clusview/labels/state%20%3A%20discarded
   https://github.com/gcalcedo/clusview/labels/state%20%3A%20accepted
 
-- `state`: progress on the issue.
+- `type`: nature of the problem and changes:
 
   https://github.com/gcalcedo/clusview/labels/type%20%3A%20enhancement
   https://github.com/gcalcedo/clusview/labels/type%20%3A%20docs
