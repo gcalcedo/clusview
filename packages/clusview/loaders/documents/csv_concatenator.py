@@ -2,7 +2,7 @@ from typing import List
 
 import pandas as pd
 
-from clusview.loaders.documents.base_document_loader import BaseDocumentLoader
+from loaders.documents.base_document_loader import BaseDocumentLoader
 
 
 class CSVConcatenator(BaseDocumentLoader):

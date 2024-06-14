@@ -4,7 +4,7 @@ import numpy as np
 from numpy import ndarray
 from sklearn.metrics import davies_bouldin_score
 
-from clusview.metrics.base_metric import BaseMetric
+from metrics.base_metric import BaseMetric
 
 
 class DaviesBouldinScore(BaseMetric):

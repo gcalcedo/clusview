@@ -2,7 +2,7 @@ from typing import Iterable
 
 import numpy as np
 
-from clusview.samplers.parameters.base_parameter_sampler import BaseSampler
+from samplers.parameters.base_parameter_sampler import BaseSampler
 
 
 class PolynomialSampler(BaseSampler):

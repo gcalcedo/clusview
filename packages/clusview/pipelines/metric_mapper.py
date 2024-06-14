@@ -10,9 +10,9 @@ from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 from umap import UMAP
 
-from clusview.loaders.documents.base_document_loader import BaseDocumentLoader
-from clusview.metrics.base_metric import BaseMetric
-from clusview.samplers.clusters.hdsbcan_sampler import HDBSCANSampler
+from loaders.documents.base_document_loader import BaseDocumentLoader
+from metrics.base_metric import BaseMetric
+from samplers.clusters.hdsbcan_sampler import HDBSCANSampler
 
 
 class MetricMapper:
