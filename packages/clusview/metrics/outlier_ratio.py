@@ -2,7 +2,7 @@ from typing import Any
 
 from numpy import ndarray
 
-from clusview.metrics.base_metric import BaseMetric
+from metrics.base_metric import BaseMetric
 
 
 class OutlierRatio(BaseMetric):

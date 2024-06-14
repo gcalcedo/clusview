@@ -3,7 +3,7 @@ from typing import Any
 import numpy as np
 from numpy import ndarray
 
-from clusview.metrics.base_metric import BaseMetric
+from metrics.base_metric import BaseMetric
 
 
 class AverageClusterSize(BaseMetric):

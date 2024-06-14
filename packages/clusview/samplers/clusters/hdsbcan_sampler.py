@@ -3,7 +3,7 @@ from typing import List
 
 from hdbscan import HDBSCAN
 
-from clusview.samplers.parameters.base_parameter_sampler import BaseSampler
+from samplers.parameters.base_parameter_sampler import BaseSampler
 
 
 class HDBSCANSampler:

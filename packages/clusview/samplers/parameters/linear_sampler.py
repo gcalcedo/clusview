@@ -1,6 +1,6 @@
 from typing import Iterable
 
-from clusview.samplers.parameters.base_parameter_sampler import BaseSampler
+from samplers.parameters.base_parameter_sampler import BaseSampler
 
 
 class LinearSampler(BaseSampler):
