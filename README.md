@@ -1,4 +1,4 @@
-![ClusView Banner](assets/ClusView_Banner.png)
+![ClusView Banner](assets/clusView_banner.png)
 
 # ClusView
 *ClusView* is a [BERTopic](https://maartengr.github.io/BERTopic/index.html) based tool that aims to optimize and visualize document clustering leveraging a configurable cluster quality meter. Essentially, performing ***CLUS***ter ***VIEW***ing in a human-readable way.
