@@ -1,5 +1,5 @@
 # Contributing
-*ClusView* follows the following guidelines regarding issues, PRs and commit history.
+*Clusview* follows the following guidelines regarding issues, PRs and commit history.
 
 ## Issues
 Issues are the main point of information about proposals, bugs, and any other type of discussion.
