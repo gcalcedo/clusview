@@ -6,7 +6,6 @@ on:
       - closed
     branches:
       - main
-      - develop
 
 jobs:
   tag:
@@ -35,7 +34,6 @@ jobs:
     needs: [tag]
     name: Release
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
     steps:
