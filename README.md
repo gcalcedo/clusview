@@ -1,5 +1,17 @@
 ![ClusView Banner](assets/ClusView_Banner.png)
 
+<div align="center">
+  
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+  ![GitHub Latest Release)](https://img.shields.io/github/v/release/gcalcedo/clusview?include_prereleases&label=pre-release&logo=github)
+
+</div>
+<div align="center">
+  
+  [![Tag and Release](https://github.com/gcalcedo/clusview/actions/workflows/tag_and_release.yml/badge.svg)](https://github.com/gcalcedo/clusview/actions/workflows/tag_and_release.yml)
+
+</div>
+
 # ClusView
 *ClusView* is a [BERTopic](https://maartengr.github.io/BERTopic/index.html) based tool that aims to optimize and visualize document clustering leveraging a configurable cluster quality meter. Essentially, performing ***CLUS***ter ***VIEW***ing in a human-readable way.
 
