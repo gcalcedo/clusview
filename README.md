@@ -1,4 +1,4 @@
-![ClusView Banner](assets/ClusView_Banner.png)
+![Clusview Banner](assets/clusview_logo_banner.png)
 
 <div align="center">
   
@@ -12,19 +12,19 @@
 
 </div>
 
-# ClusView
-*ClusView* is a [BERTopic](https://maartengr.github.io/BERTopic/index.html) based tool that aims to optimize and visualize document clustering leveraging a configurable cluster quality meter. Essentially, performing ***CLUS***ter ***VIEW***ing in a human-readable way.
+# Clusview
+*Clusview* is a [BERTopic](https://maartengr.github.io/BERTopic/index.html) based tool that aims to optimize and visualize document clustering leveraging a configurable cluster quality meter. Essentially, performing ***CLUS***ter ***VIEW***ing in a human-readable way.
 
 ## Structure
-*ClusView* is maintained and organized in different packages, found under the `packages` directory.
+*Clusview* is maintained and organized in different packages, found under the `packages` directory.
 
 | Package       | Description                                                    |
 | ------------- | -------------------------------------------------------------- |
 | `clusview`    | Python core functionality implemented as a standalone module.  |
-| `ui`          | user interface to ease the creation and use of *ClusView*.     |
+| `ui`          | user interface to ease the creation and use of *Clusview*.     |
 
 ## Prerequisites
-The current version of *ClusView* packages have the following pre-requisites.
+The current version of *Clusview* packages have the following pre-requisites.
 
 | Package       | Prerequisites                                                       |
 | ------------- | ------------------------------------------------------------------- |
