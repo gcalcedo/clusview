@@ -1,7 +1,8 @@
 from typing import Any
 
-from metrics.base_metric import BaseMetric
 from numpy import ndarray
+
+from metrics.base_metric import BaseMetric
 
 
 class ClusterCount(BaseMetric):
