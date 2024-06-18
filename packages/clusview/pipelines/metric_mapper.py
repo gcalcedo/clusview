@@ -6,12 +6,13 @@ from typing import Dict
 import numpy as np
 import pandas as pd
 from hdbscan import HDBSCAN
-from loaders.documents.base_document_loader import BaseDocumentLoader
-from metrics.base_metric import BaseMetric
-from samplers.clusters.hdsbcan_sampler import HDBSCANSampler
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 from umap import UMAP
+
+from loaders.documents.base_document_loader import BaseDocumentLoader
+from metrics.base_metric import BaseMetric
+from samplers.clusters.hdsbcan_sampler import HDBSCANSampler
 
 
 class MetricMapper:
