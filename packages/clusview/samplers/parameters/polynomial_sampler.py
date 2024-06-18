@@ -1,6 +1,7 @@
 from typing import Iterable
 
 import numpy as np
+
 from samplers.parameters.base_parameter_sampler import BaseSampler
 
 
