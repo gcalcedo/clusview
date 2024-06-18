@@ -13,6 +13,7 @@ Issues are always labeled into three categories:
   https://github.com/gcalcedo/clusview/labels/module%20%3A%20repo
   https://github.com/gcalcedo/clusview/labels/module%20%3A%20core
   https://github.com/gcalcedo/clusview/labels/module%20%3A%20ui
+  https://github.com/gcalcedo/clusview/labels/module%20%3A%20docs
 
 - `state`: progress on the issue.
 
