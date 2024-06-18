@@ -21,15 +21,17 @@
 | Package       | Description                                                    |
 | ------------- | -------------------------------------------------------------- |
 | `clusview`    | Python core functionality implemented as a standalone module.  |
-| `ui`          | user interface to ease the creation and use of *Clusview*.     |
+| `ui`          | User interface to ease the creation and use of *Clusview*.     |
+| `docs`        | Documentation site.                                            |
 
 ## Prerequisites
 The current version of *Clusview* packages have the following pre-requisites.
 
-| Package       | Prerequisites                                                       |
-| ------------- | ------------------------------------------------------------------- |
-| `clusview`    | `Python 3.12.3`. Older versions may work. Not tested.               |
-| `ui`          | `Node 20.14.0` & `pnpm 9.3.0`. Older versions may work. Not tested. |
+| Package       | Prerequisites                                                           |
+| ------------- | ----------------------------------------------------------------------- |
+| `clusview`    | `Python 3.12.3`. Older versions may work. Not tested.                   |
+| `ui`          | `Node 20.14.0` & `pnpm 9.3.0`. Older versions may work. Not tested.     |
+| `docs`        | `Starlight 0.24.2` & `pnpm 9.3.0`. Older versions may work. Not tested. |
 
 
 ## Installation
@@ -48,6 +50,17 @@ pip install -r requirements.txt
 ```
 
 ### `ui`
+1. (If using [`nvm`](https://github.com/nvm-sh/nvm)) Enable corepack.
+```console
+corepack enable
+```
+
+2. Install dependencies in `package.json` via `pnpm`.
+```console
+pnpm install
+```
+
+### `docs`
 1. (If using [`nvm`](https://github.com/nvm-sh/nvm)) Enable corepack.
 ```console
 corepack enable
