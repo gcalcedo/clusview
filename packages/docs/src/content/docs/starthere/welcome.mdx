@@ -7,6 +7,7 @@ import { Steps } from '@astrojs/starlight/components';
 import { Code } from '@astrojs/starlight/components';
 import { FileTree } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 ## A peaceful morning
 Picture yourself as a curator in a museum.
@@ -17,7 +18,7 @@ One peaceful morning, your museum receives a large crate of archives from Ancien
 
 You are tasked with organizing and displaying these archives in a way that is both informative and coherent to visitors.
 
-How would you go about this? Ordering by style? By time period? By subject matter? And to make things more
+How would you go about this? Grouping by style? By time period? By subject matter? And to make things more
 complicated, how many groups should you divide the archives into? Suddenly, the morning is not so peaceful anymore.
 
 As you might have noticed, there is no right answer for this. And even if you find the optimal way to do this,
@@ -29,8 +30,9 @@ This is where the concept of [Topic Modeling](https://en.wikipedia.org/wiki/Topi
 
 Suppose you could feed the archives into a machine, and it would automatically group them into coherent topics.
 Well, recent techniques in Natural Language Processing,
-such as [BERTopic](https://maartengr.github.io/BERTopic/index.html) have made this possible,
-leveraging the power of [transformers.](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)) This sound amazing!
+such as [BERTopic](https://maartengr.github.io/BERTopic/index.html), have made this possible
+leveraging the power of [transformers.](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture))
+Problem solved then, right?
 
 Not so fast! There is, however, no silver bullet for how to use these tools, my dear curator.
 No oracle can tell you the best way to group your archives. Natural language is fuzzy, and what constitutes a good topic
@@ -45,7 +47,6 @@ Keep reading, your journey with Clusview starts here!
 
 ## Installation
 Currently, Clusview has no hosted solution. The easiest way to use Clusview is to run it locally on your machine.
-These next steps assume a UNIX environment.
 
 <Steps>
 
@@ -61,7 +62,7 @@ These next steps assume a UNIX environment.
     The core package (**`packages/clusview`**), implemented in Python, is where the main functionality is.
     This is also a standalone module, so you can use it in your own projects without the use of the UI.
 
-    Here's a quick overview of the packages structure:
+    Here's a quick overview of the structure, with the core package highlighted:
 
     <FileTree>
     - ...
@@ -85,7 +86,17 @@ These next steps assume a UNIX environment.
 
 4. Activate the [virtual environment](https://docs.python.org/3/library/venv.html).
 
-    <Code code={"source venv/bin/activate"} lang="shell" />
+    <Tabs>
+    <TabItem label="Linux" icon="linux">
+        <Code code={"source venv/bin/activate"} lang="shell" />
+    </TabItem>
+    <TabItem label="macOS" icon="apple">
+        <Code code={"source venv/bin/activate"} lang="shell" />
+    </TabItem>
+    <TabItem label="Windows" icon="seti:windows">
+        <Code code={"venv/Scripts/activate"} lang="shell" />
+    </TabItem>
+    </Tabs>
 
 5. Install dependencies in **`requirements.txt`** via **`pip`**.
 
