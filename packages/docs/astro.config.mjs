@@ -6,17 +6,24 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Clusview",
-      customCss: [
-        './src/styles/starlight-override.css'
-      ],
+      customCss: ["./src/styles/starlight-override.css"],
       logo: {
         src: "./src/assets/clusview_banner.svg",
-        replacesTitle: true
+        replacesTitle: true,
       },
       sidebar: [
         {
           label: "Start Here",
-          autogenerate: { directory: "starthere" },
+          items: [{ label: "Getting Started", link: "/starthere/welcome" }],
+        },
+        {
+          label: "Components",
+          items: [
+            {
+              label: "Loaders",
+              items: [{ label: "Loaders Overview", link: "/components/loaders/overview" }],
+            },
+          ],
         },
       ],
     }),
