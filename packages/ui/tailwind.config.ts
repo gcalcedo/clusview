@@ -8,7 +8,7 @@ const config: Config = {
   plugins: [
     require("@catppuccin/tailwindcss")({
       prefix: "ctp",
-      defaultFlavour: "macchiato",
+      defaultFlavour: "mocha",
     }),
   ],
 };
