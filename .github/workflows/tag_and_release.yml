@@ -8,9 +8,9 @@ on:
         description: Version bump to perform
         required: true
         options: 
-        - "#patch"
-        - "#minor"
-        - "#major"
+        - "patch"
+        - "minor"
+        - "major"
 
 jobs:
   tag:
