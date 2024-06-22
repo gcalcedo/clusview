@@ -4,7 +4,7 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gcalcedo.github.io',
-  base: 'clusview/packages/docs/',
+  base: '/clusview/packages/docs/',
   integrations: [
     starlight({
       title: "Clusview",
