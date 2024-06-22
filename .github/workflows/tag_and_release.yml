@@ -32,30 +32,21 @@ jobs:
           DEFAULT_BUMP: ${{ github.event.inputs.bump }}
           WITH_V: true
           BRANCH_HISTORY: last
-          DRY_RUN: true
-      # - name: Bump version and push tag
-      #   id: tag
-      #   uses: mathieudutour/github-tag-action@v6.2
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     default_bump: ${{ github.event.inputs.bump }}
-      #     dry_run: true
-      #     create_annotated_tag: false
 
-  # release:
-  #   needs: [tag]
-  #   name: Release
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     contents: write
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v4
+  release:
+    needs: [tag]
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  #     - name: Release with latest tag
-  #       uses: softprops/action-gh-release@v2
-  #       with:
-  #         tag_name: ${{ needs.tag.outputs.new_tag }}
-  #         generate_release_notes: true
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release with latest tag
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.tag.outputs.new_tag }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
