@@ -1,9 +1,9 @@
 /* Dark mode colors. */
 :root {
-    --sl-color-accent-low: #11111b;
-	--sl-color-accent-high: #89b4fa;
-	--sl-color-white: #CDD6F4;
-	--sl-color-gray-5: #45475a;
-	--sl-color-gray-6: #181825;
-	--sl-color-black: #11111b;
+    --sl-color-accent-low: #1A1C27;
+	--sl-color-accent-high: #F8D762;
+	--sl-color-white: #E3E7F5;
+	--sl-color-gray-5: #4D5B7A;
+	--sl-color-gray-6: #1A1C27;
+	--sl-color-black: #1A1C27;
 }
