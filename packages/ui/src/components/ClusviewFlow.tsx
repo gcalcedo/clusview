@@ -39,7 +39,7 @@ export default function ClusviewFlow() {
   );
 
   return (
-    <div className="w-full h-full">
+    <div className="h-full w-full">
       <ReactFlow
         nodes={nodes}
         edges={edges}
