@@ -1,4 +1,4 @@
-![Clusview Banner](assets/clusview_logo_banner.png)
+![Clusview Banner](assets/clusview_logo_banner.svg)
 
 <div align="center">
   
