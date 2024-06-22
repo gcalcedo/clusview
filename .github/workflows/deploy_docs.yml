@@ -1,11 +1,6 @@
 name: Deploy Docs
 
 on:
-  pull_request:
-      types:
-        - closed
-      branches:
-        - develop
   workflow_dispatch:
 
 permissions:
