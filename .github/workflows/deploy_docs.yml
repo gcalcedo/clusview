@@ -17,6 +17,10 @@ concurrency:
 env:
   BUILD_PATH: "./packages/docs"
 
+defaults:
+  run:
+    working-directory: "./packages/docs"
+
 jobs:
   build:
     name: Build
