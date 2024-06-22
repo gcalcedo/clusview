@@ -8,9 +8,9 @@ on:
         description: Version bump to perform
         required: true
         options: 
-        - major
-        - minor
-        - patch
+        - "patch"
+        - "minor"
+        - "major"
 
 jobs:
   tag:
@@ -24,20 +24,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # - name: Bump version and push tag
-      #   uses: anothrNick/github-tag-action@v1
-      #   id: version_tag
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     WITH_V: true
-      #     BRANCH_HISTORY: last
       - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@v1
         id: tag
-        uses: mathieudutour/github-tag-action@v6.2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          default_bump: ${{ github.event.inputs.bump }}
-          dry_run: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: ${{ github.event.inputs.bump }}
+          WITH_V: true
+          BRANCH_HISTORY: last
 
   release:
     needs: [tag]
