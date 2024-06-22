@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
+const workSans = Work_Sans({ subsets: ["latin"], weight: ["200", "400", "700"] });
 
 export const metadata: Metadata = {
   title: "ClusView",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={workSans.className}>{children}</body>
     </html>
   );
 }
