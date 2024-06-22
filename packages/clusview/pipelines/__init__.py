@@ -1,3 +1,3 @@
 """
-Functions for pipelines for metric mapping
+Pipeline for chaining functionalities and components.
 """

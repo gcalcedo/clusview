@@ -1,3 +1,3 @@
 """
-Functions for clustering algorithms such as HDBSCAN
+Functions for clustering algorithms.
 """
