@@ -35,11 +35,11 @@ export default function ClusviewFlow() {
   const onConnect = useCallback(
     (connection: Edge | Connection) =>
       setEdges((eds) => addEdge({ ...connection }, eds)),
-    [setEdges]
+    [setEdges],
   );
 
   return (
-    <div className="w-full h-full">
+    <div className="h-full w-full">
       <ReactFlow
         nodes={nodes}
         edges={edges}

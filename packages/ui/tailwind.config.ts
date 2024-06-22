@@ -18,7 +18,7 @@ const config: Config = {
         "gray-4": "#30384B",
         "gray-3": "#4D5B7A",
         "gray-2": "#65769C",
-        "gray-1": "#9AA9CB"
+        "gray-1": "#9AA9CB",
       },
     },
   },

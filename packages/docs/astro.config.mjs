@@ -3,8 +3,8 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://gcalcedo.github.io',
-  base: '/clusview',
+  site: "https://gcalcedo.github.io",
+  base: "/clusview",
   integrations: [
     starlight({
       title: "Clusview",
@@ -23,7 +23,12 @@ export default defineConfig({
           items: [
             {
               label: "Loaders",
-              items: [{ label: "Loaders Overview", link: "/components/loaders/overview" }],
+              items: [
+                {
+                  label: "Loaders Overview",
+                  link: "/components/loaders/overview",
+                },
+              ],
             },
           ],
         },
