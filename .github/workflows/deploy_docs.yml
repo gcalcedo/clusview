@@ -1,6 +1,13 @@
 name: Deploy Docs
 
 on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+    paths: 
+      - 'packages/docs/**'
   workflow_dispatch:
 
 permissions:
