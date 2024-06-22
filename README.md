@@ -9,6 +9,7 @@
 <div align="center">
   
   [![Tag and Release](https://github.com/gcalcedo/clusview/actions/workflows/tag_and_release.yml/badge.svg)](https://github.com/gcalcedo/clusview/actions/workflows/tag_and_release.yml)
+  [![Deploy Docs](https://github.com/gcalcedo/clusview/actions/workflows/deploy_docs.yml/badge.svg)](https://github.com/gcalcedo/clusview/actions/workflows/deploy_docs.yml)
 
 </div>
 
