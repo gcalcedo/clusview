@@ -2,7 +2,6 @@ from itertools import product
 from typing import List
 
 from hdbscan import HDBSCAN
-
 from samplers.parameters.base_parameter_sampler import BaseSampler
 
 

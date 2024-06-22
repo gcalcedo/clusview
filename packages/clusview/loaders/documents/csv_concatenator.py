@@ -1,7 +1,6 @@
 from typing import List
 
 import pandas as pd
-
 from loaders.documents.base_document_loader import BaseDocumentLoader
 
 
