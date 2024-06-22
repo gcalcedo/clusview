@@ -1,10 +1,9 @@
 from typing import Any
 
 import numpy as np
+from metrics.base_metric import BaseMetric
 from numpy import ndarray
 from sklearn.metrics import silhouette_score
-
-from metrics.base_metric import BaseMetric
 
 
 class SilhouetteScore(BaseMetric):

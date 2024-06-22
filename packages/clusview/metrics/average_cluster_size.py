@@ -1,9 +1,8 @@
 from typing import Any
 
 import numpy as np
-from numpy import ndarray
-
 from metrics.base_metric import BaseMetric
+from numpy import ndarray
 
 
 class AverageClusterSize(BaseMetric):
