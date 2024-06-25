@@ -13,7 +13,7 @@ import ReactFlow, {
   Node,
   BackgroundVariant,
 } from "reactflow";
-import CSVLoader from "./nodes/CSVLoader";
+import CSVLoader from "./nodes/loaders/documents/CSVLoader";
 
 import "reactflow/dist/style.css";
 
