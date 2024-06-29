@@ -1,3 +1,3 @@
 """
-Pipeline for chaining functionalities and components.
+Pipelines for chaining functionalities and components.
 """

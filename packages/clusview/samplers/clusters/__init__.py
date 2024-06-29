@@ -1,3 +1,3 @@
 """
-Functions for clustering algorithms.
+Samplers for clustering algorithms
 """
