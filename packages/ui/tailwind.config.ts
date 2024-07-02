@@ -12,6 +12,7 @@ const config: Config = {
         blue: "#33B6FF",
         red: "#EE436C",
         yellow: "#F8D762",
+        purple: "#B04CFF",
         white: "#E3E7F5",
         black: "#1A1C27",
         "gray-5": "#252D3E",
