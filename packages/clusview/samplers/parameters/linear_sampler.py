@@ -1,6 +1,6 @@
 from typing import Iterable
 
-from samplers.parameters.base_parameter_sampler import BaseSampler
+from .base_parameter_sampler import BaseSampler
 
 
 class LinearSampler(BaseSampler):
