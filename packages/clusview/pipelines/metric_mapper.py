@@ -6,12 +6,13 @@ from typing import Dict
 import numpy as np
 import pandas as pd
 from hdbscan import HDBSCAN
-from loaders.documents.base_document_loader import BaseDocumentLoader
-from metrics.base_metric import BaseMetric
-from samplers.clusters.hdsbcan_sampler import HDBSCANSampler
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 from umap import UMAP
+
+from ..loaders.documents.base_document_loader import BaseDocumentLoader
+from ..metrics.base_metric import BaseMetric
+from ..samplers.clusters.hdsbcan_sampler import HDBSCANSampler
 
 
 class MetricMapper:
@@ -73,7 +74,6 @@ class MetricMapper:
                     n_components=5,
                     min_dist=0.0,
                     metric="cosine",
-                    transform_seed=np.random.randint(0, 100000),
                 ).fit_transform(embeddings)
 
                 for hdbscan in self.hdbscan_sampler.iterate_configurations():
@@ -92,7 +92,7 @@ class MetricMapper:
                 {metric: "mean"}
             )
             sorted_df = combined_df.sort_values(by=sampler_names)
-            sorted_df.to_csv(f"results/{metric}_map.csv", index=False)
+            sorted_df.to_csv(f"result/{metric}_map.csv", index=False)
 
         progress_bar.close()
         pool.shutdown(wait=True)
