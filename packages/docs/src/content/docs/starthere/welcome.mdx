@@ -1,15 +1,11 @@
 ---
-title: Getting Started
+title: A peaceful morning
 description: Get started with Clusview.
 ---
 
 import { Steps } from "@astrojs/starlight/components";
-import { Code } from "@astrojs/starlight/components";
-import { FileTree } from "@astrojs/starlight/components";
+import { Card, LinkCard, CardGrid } from "@astrojs/starlight/components";
 import { Aside } from "@astrojs/starlight/components";
-import { Tabs, TabItem } from "@astrojs/starlight/components";
-
-## A peaceful morning
 
 Picture yourself as a curator in a museum.
 
@@ -53,78 +49,57 @@ And so, we arrive at [Clusview](/clusview). A tool designed to ease the process
 of exploring and understanding the topics with an interactive approach. So you
 can decide what is the best way to group your archives.
 
-Keep reading, your journey with Clusview starts here!
+Learn how to [install](#installation) Clusview down below, or kickstart your
+topic modeling journey with these quicklinks.
+
+<CardGrid>
+  <LinkCard title="📦 &nbsp; Packages" href="/clusview/starthere/packages/" />
+  <LinkCard
+    title="💡 &nbsp; Components"
+    href="/clusview/components/overview/"
+  />
+  <LinkCard title="🏛️ &nbsp; Scientific Foundations" href="/clusview/" />
+  <LinkCard title="✍️ &nbsp; Contributing" href="/clusview/" />
+</CardGrid>
 
 ## Installation
 
-Currently, Clusview has no hosted solution. The easiest way to use Clusview is
-to run it locally on your machine.
+Currently, there is no hosted solution for Clusview. The easiest way to use
+Clusview is to import it locally in your projects.
 
 <Steps>
 
 1.  [Clone](https://git-scm.com/docs/git-clone/) the Clusview repository from
     [GitHub](https://github.com/gcalcedo/clusview).
 
-    <Code
-      code={"git clone https://github.com/gcalcedo/clusview.git"}
-      lang="shell"
-    />
+    ```shell
+    git clone https://github.com/gcalcedo/clusview.git
 
-2.  Navigate to the core Clusview package.
+    ```
 
-    <Code code={"cd clusview/packages/clusview"} lang="shell" />
+2.  In your own project, install the **`core`** package from the path of the
+    Clusview repository you just cloned.
 
-    Clusview is organized in different packages under the **`packages`**
-    directory. The core package (**`packages/clusview`**), implemented in
-    Python, is where the main functionality is. This is also a standalone
-    module, so you can use it in your own projects without the use of the UI.
+    ```shell
+    pip install path_to_clusview/packages/core/
+    ```
 
-    Here's a quick overview of the `packages` directory structure, with the core
-    package highlighted:
+3.  Done! Clusview components can now be imported into your Python scripts.
 
-    {/* prettier-ignore */}
-    <FileTree>
-      - packages/ 
-        - **clusview/** # This is the core package. 
-        - docs/ # Documentation, this very site!
-        - ui/ # UI to interact with the core package. 
-        - benchmark/ # Experiment & benchmark suite.
-    </FileTree>
+    ```python
+    from clusview.samplers.parameters.linear_sampler import LinearSampler
 
-3.  Create a [virtual environment](https://docs.python.org/3/library/venv.html).
+    sampling = LinearSampler("x", 0, 10, 6).sample_range()
+    print(sampling)
+    ```
 
-    <Code code={"python -m venv venv"} lang="shell" />
-
-    The only pre-requisite you need to use Clusview is a Python installation.
+    ```python
+    >>> [0, 2, 4, 6, 8, 10]
+    ```
 
     <Aside type="caution" title="Python Version Compatibility">
-      Clusview has been developed with **`Python 3.12.3`**. Older versions may
+      The **`core`** package has been developed with **`Python 3.12.3`**. Older versions may
       work as well, but this is not yet tested.
     </Aside>
-
-4.  Activate the
-    [virtual environment](https://docs.python.org/3/library/venv.html).
-
-    <Tabs>
-      <TabItem label="Linux" icon="linux">
-        <Code code={"source venv/bin/activate"} lang="shell" />
-      </TabItem>
-      <TabItem label="macOS" icon="apple">
-        <Code code={"source venv/bin/activate"} lang="shell" />
-      </TabItem>
-      <TabItem label="Windows" icon="seti:windows">
-        <Code code={"venv/Scripts/activate"} lang="shell" />
-      </TabItem>
-    </Tabs>
-
-5.  Install dependencies in **`requirements.txt`** via **`pip`**.
-
-    <Code code={"pip install -r requirements.txt"} lang="shell" />
-
-6.  Done!
-
-        <Aside type="tip" title="3, 2, 1... Launch!">
-           Clusview is ready to work for you, start exploring your data!
-        </Aside>
 
 </Steps>
