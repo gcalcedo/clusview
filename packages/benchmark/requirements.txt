@@ -1,2 +1,4 @@
 great_tables[extra]
+matplotlib
 polars
+-e ../core
