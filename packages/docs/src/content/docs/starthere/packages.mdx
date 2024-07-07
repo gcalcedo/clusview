@@ -1,0 +1,31 @@
+---
+title: Packages
+description: Overview of Clusview packages.
+---
+
+import { FileTree } from "@astrojs/starlight/components";
+
+Clusview is organized in different packages under the **`packages`** directory,
+located at the root of the [project](https://github.com/gcalcedo/clusview).
+Here's a quick overview of the **`packages`** directory structure, with the core
+package highlighted:
+
+{/* prettier-ignore */}
+<FileTree>
+  - packages/
+    - **core/** # Standalone package, the Clusview logic.
+    - docs/ # Documentation, this very site!
+    - ui/ # UI to interact with the core package.
+    - benchmark/ # Experiment & benchmark suite.
+</FileTree>
+
+All packages are maintained in the same repository to ease local development,
+since they are heavily related or directly dependant on **`core`**.
+
+## Core
+
+## Docs
+
+## UI
+
+## Benchmark
