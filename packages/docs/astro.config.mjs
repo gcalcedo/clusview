@@ -16,19 +16,17 @@ export default defineConfig({
       sidebar: [
         {
           label: "Start Here",
-          items: [{ label: "Getting Started", link: "/starthere/welcome" }],
+          items: [
+            { label: "Getting Started", link: "/starthere/welcome" },
+            { label: "Packages", link: "/starthere/packages" },
+          ],
         },
         {
           label: "Components",
           items: [
             {
-              label: "Loaders",
-              items: [
-                {
-                  label: "Loaders Overview",
-                  link: "/components/loaders/overview",
-                },
-              ],
+              label: "Component Architecture",
+              link: "/components/architecture",
             },
           ],
         },
