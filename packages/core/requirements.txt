@@ -1,4 +1,5 @@
 bertopic
+polars
 tqdm
 black
 isort
