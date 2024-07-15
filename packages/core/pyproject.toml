@@ -8,6 +8,7 @@ dynamic = ["version"]
 
 dependencies = [
   "bertopic",
+  "polars",
   "tqdm",
   "black",
   "isort"
