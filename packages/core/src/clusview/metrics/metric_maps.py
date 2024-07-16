@@ -2,6 +2,7 @@
 and compare multi-dimensional matrices representing single-value metric measurements
 across a Cartesian product space of hyperparameters."""
 
+import matplotlib.pyplot as plt
 import numpy as np
 import polars as pl
 import sklearn.metrics
@@ -73,22 +74,28 @@ class MetricMap:
     >>> metric_map = MetricMap(sampling)
     >>> metric_map.mapping
     [[0.1, 0.2, 0.3]
-     [0.2, 0.5, 0.2]
-     [0.3, 0.4, 0.1]]
-
+     [0.2, 0.5, 0.4]
+     [0.3, 0.2, 0.1]]
 
     >>> metric_map.metric_name
     "metric_X"
+
+    >>> metric_map.hyperparameters
+    ['param_1', 'param_2']
 
     Fields
     ---
     - mapping (`np.ndarray`): The multi-dimensional matrix representing the metric values.
     - metric_name (`str`): The name of the metric column in the sampling.
+    - hyperparameters (`list[str]`): The names of the hyperparameter columns in the sampling.
 
     Methods
     ---
     - `normalize()` -> `tuple[float, float]`: Normalize the metric map to the range [0, 1].
     - `smooth(passes: int, sigma: float)` -> `None`: Smooth the metric map using a Gaussian filter.
+    - `reduce_dimensions(target_dimension: int, **kwargs)` -> `np.ndarray`:
+    Reduce the dimensionality of the metric map using UMAP.
+    - `plot()` -> `None`: Plot the metric map as a 3D surface.
     """
 
     def __init__(self, sampling: pl.DataFrame | None = None):
@@ -100,10 +107,12 @@ class MetricMap:
         number_of_cols = sampling.width
 
         sampled_ranges = []
+        self.hyperparameters = []
         for col in sampling.columns:
             if col == sampling.columns[number_of_cols - 1]:
                 self.metric_name = col
                 continue
+            self.hyperparameters.append(col)
             sampled_ranges.append(
                 slice(sampling[col].min(), sampling[col].max() + 1, 1)
             )
@@ -188,7 +197,8 @@ class MetricMap:
     def reduce_dimensions(self, target_dimension: int, **kwargs) -> np.ndarray:
         """Reduce the dimensionality of the metric map using UMAP.
 
-        By default, UMAP is randomly initialized, but a seed can be provided to ensure reproducibility.
+        By default, UMAP is randomly initialized, but a seed can be provided to
+        ensure reproducibility.
 
         Parameters
         ---
@@ -225,6 +235,37 @@ class MetricMap:
         umap = UMAP(n_components=target_dimension, **kwargs)
         self.mapping = umap.fit_transform(self.mapping)
         return old_mapping
+
+    def plot(self) -> None:
+        """Plot the metric map as a 3D surface.
+
+        Dimensions are reduced to 2 if the metric map is higher-dimensional.
+
+        Examples
+        ---
+        >>> metric_map.mapping
+        [[1.0, 2.0, 3.0]
+         [4.0, 5.0, 6.0]]
+        >>> metric_map.plot()
+        """
+
+        mapping_to_plot = self.mapping.copy().transpose()
+        self.reduce_dimensions(2)
+
+        fig = plt.figure()
+        ax = fig.add_subplot(111, projection="3d")
+
+        x, y = np.meshgrid(
+            np.arange(mapping_to_plot.shape[0]), np.arange(mapping_to_plot.shape[1])
+        )
+        ax.plot_surface(x, y, mapping_to_plot, cmap="magma")
+
+        ax.set_xlabel(self.hyperparameters[0])
+        ax.set_ylabel(self.hyperparameters[1])
+        ax.set_zlabel(self.metric_name)
+
+        fig.canvas.manager.full_screen_toggle()
+        plt.show()
 
 
 #############################
