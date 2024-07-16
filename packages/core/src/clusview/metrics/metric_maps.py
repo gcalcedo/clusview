@@ -7,6 +7,7 @@ import polars as pl
 import sklearn.metrics
 from scipy.interpolate import griddata
 from scipy.ndimage import gaussian_filter
+from umap import UMAP
 
 
 class MetricMap:
@@ -182,6 +183,47 @@ class MetricMap:
         for _ in range(passes):
             self.mapping = gaussian_filter(self.mapping, sigma=sigma)
 
+        return old_mapping
+
+    def reduce_dimensions(self, target_dimension: int, **kwargs) -> np.ndarray:
+        """Reduce the dimensionality of the metric map using UMAP.
+
+        By default, UMAP is randomly initialized, but a seed can be provided to ensure reproducibility.
+
+        Parameters
+        ---
+        - target_dimension (`int`): The target dimensionality of the metric map.
+        - kwargs: Additional keyword arguments to pass to the UMAP constructor.
+
+        Returns
+        ---
+        - `np.ndarray`: The original metric map before dimensionality reduction.
+
+        Examples
+        ---
+        >>> metric_map.mapping
+        [[1.0, 2.0, 3.0]
+         [4.0, 5.0, 6.0]
+         [7.0, 8.0, 9.0]]
+        >>> old_mapping = metric_map.project_to_dimension(1, n_neighbors=2)
+        >>> metric_map.mapping
+        # One possible output, random initialization
+        [[-3.359663 ]
+         [-4.1009364]
+         [-1.7259374]]
+        >>> old_mapping
+        [[1.0, 2.0, 3.0]
+         [4.0, 5.0, 6.0]
+         [7.0, 8.0, 9.0]]
+        """
+
+        old_mapping = self.mapping.copy()
+
+        if self.mapping.ndim >= target_dimension:
+            return old_mapping
+
+        umap = UMAP(n_components=target_dimension, **kwargs)
+        self.mapping = umap.fit_transform(self.mapping)
         return old_mapping
 
 
