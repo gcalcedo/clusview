@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import polars as pl
 import sklearn.metrics
+from matplotlib.animation import FFMpegWriter, FuncAnimation
 from scipy.interpolate import griddata
 from scipy.ndimage import gaussian_filter
 from umap import UMAP
@@ -266,6 +267,44 @@ class MetricMap:
 
         fig.canvas.manager.full_screen_toggle()
         plt.show()
+
+    def render_turn_around(self, speed: int = 1) -> None:
+        """
+        Render a 3D plot of the metric map that rotates around the vertical axis.
+
+        Parameters
+        ---
+        - speed (`int`): The speed at which the plot rotates around the vertical axis.
+
+        Examples
+        ---
+        >>> metric_map.mapping
+        [[1.0, 2.0, 3.0]
+         [4.0, 5.0, 6.0]]
+        >>> metric_map.render_turn_around(speed=1)
+        """
+        mapping_to_plot = self.mapping.copy().transpose()
+        self.reduce_dimensions(2)
+
+        fig = plt.figure(figsize=(19.20, 10.80), dpi=100)
+        fig.patch.set_facecolor("#1A1C27")
+        ax = fig.add_subplot(111, projection="3d", facecolor="#1A1C27")
+
+        x, y = np.meshgrid(
+            np.arange(mapping_to_plot.shape[0]), np.arange(mapping_to_plot.shape[1])
+        )
+        ax.plot_surface(x, y, mapping_to_plot, cmap="magma")
+        ax.set_axis_off()
+
+        def update(frame):
+            ax.view_init(elev=30, azim=frame * (1 / speed))
+            return (ax,)
+
+        total_frames = 360 * speed
+
+        ani = FuncAnimation(fig, update, frames=total_frames, interval=1000 / 60)
+        writer = FFMpegWriter(fps=60, bitrate=10000)
+        ani.save(f"{self.metric_name}_turn_around.mp4", writer=writer)
 
 
 #############################
