@@ -32,3 +32,6 @@ The easiest way to understand and start working with Clusview is to take a look 
 ## Contributing
 
 Head over to [CONTRIBUTING.md](CONTRIBUTING.md) to read the guidelines on contributing to Clusview.
+
+## Regarding researchers
+The script and corresponding '.yml' file used to generate collected data can be found in the 'packages/benchmark/' directory.
