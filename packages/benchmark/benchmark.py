@@ -145,22 +145,6 @@ if __name__ == "__main__":
                         )
                         future_result.add_done_callback(
                             lambda future: (
-                                # df.extend(
-                                #     pl.DataFrame(
-                                #         [
-                                #             [
-                                #                 dataset,
-                                #                 model_name,
-                                #                 umap_seed,
-                                #                 future.result()[1],
-                                #                 future.result()[2],
-                                #                 *future.result()[0],
-                                #             ]
-                                #         ],
-                                #         schema=schema,
-                                #         orient="row",
-                                #     )
-                                # ),
                                 results.append(
                                     [
                                         dataset,

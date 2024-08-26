@@ -1,12 +1,11 @@
-datasets: [data/jesse.csv, data/joao.csv]
+datasets: [data/dataset_A.csv, data/dataset_B.csv]
 columns: ["Title", "Abstract"]
 models:
   [
-    allenai/scibert_scivocab_uncased,
     sentence-transformers/all-MiniLM-L6-v2,
     Alibaba-NLP/gte-large-en-v1.5,
   ]
-umap_seeds: [39130, 69420, 137283, 748238]
+umap_seeds: [39130, 69420]
 min_cluster_size:
   min: 2
   max: 100
